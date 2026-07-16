@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  archivebox:
+    image: archivebox/archivebox:latest
+    container_name: politi-echoes
+    ports:
+      - "8000:8000"          # Web UI
+    volumes:
+      - ./data:/data         # Persistent storage
+    environment:
+      - PUBLIC_INDEX=True
+      - PUBLIC_ADD_VIEW=True
+      - PUBLIC_SNAPSHOTS=True
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=PolitiEchoes2026!   # CHANGE THIS PASSWORD!
+      - FOOTER_INFO=PolitiEchoes - Political Facebook Post Archiver
+    restart: unless-stopped

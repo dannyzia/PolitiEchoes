@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: politi-echoes
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile  # optional
+    envVars:
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: PolitiEchoes2026!   # Change this
+      - key: PUBLIC_INDEX
+        value: "True"
